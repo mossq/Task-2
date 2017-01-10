@@ -1,0 +1,150 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.score-1, .score-2, .score-3, .score {
+	width: 480px;
+	margin-top: 50px;	
+	margin-left: 25px;	
+	border-bottom: solid 3px #2F4F4F;
+}
+
+h1 {	
+	font-family: Arial;	
+}
+
+.counter {	
+	width: 10px; 
+	height: 20px;
+	display: inline-block;	
+}
+
+input {
+	width: 65px;
+	background: #F5F5F5;
+	font-size: 0.8rem;
+	border-radius: 3px;
+	border: none;
+	padding: 13px 10px;
+	margin-left: 15px;	
+	box-shadow: inset 0px 2px 3px rgba(0,0,0,0.1);
+	clear: both;
+}
+
+input:focus {
+	background: #FFF;
+	box-shadow: 0 0 0.3px #00BFFF, inset 0 2px 3px rgba(0,0,0,0.2), 0 5px 5px rgba(0,0,0,0.15);
+	outline: none;
+}	
+
+button {	
+	margin-top: 30px;
+	margin-left: 5px;
+	padding: 5px 2px;
+	color: #FFF;
+	font-size: 18px;
+	font-weight: 400;
+	letter-spacing: 2px;
+	text-align: center;	
+	background: linear-gradient(to left top, #696969, #A9A9A9);
+	border: 1px solid #737B8D;
+	border-radius: 5px;
+	box-shadow: 0 5px 5px rgba(000,000,000,0.1),
+				inset 0 1px 0 rgba(255,255,255,0.5);
+	text-shadow: 0 1px 3px rgba(000,000,000,0.3),
+				0 0 0 rgba(255,255,255,0);
+	clear: both;
+}
+
+button.add {
+	margin-left: 25px;	
+	background: linear-gradient(to left top, #006400, #6B8E23);	
+}
+button.add:hover {
+	margin-left: 25px;	
+	background: linear-gradient(to left top, #F0FFF0, #98FB98);	
+}
+
+button.delete {
+	margin-bottom: 10px;
+	background: linear-gradient(to left top, #B22222, #F08080);
+}
+
+button.delete:hover {
+	background: linear-gradient(to left top, #FFFAFA, #FCA3A1)
+}
+
+button:hover {	
+	background: linear-gradient(to left top,#F8F8FF, #DCDCDC);
+	color: #000;
+	cursor: pointer;
+}
+
+button:focus {
+	border: 2px solid #2F4F4F;
+	outline: none;
+}
+
+.slideDown{
+	animation-name: slideDown;
+	-webkit-animation-name: slideDown;	
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;								
+}
+
+@keyframes slideDown {
+	0% {
+		transform: translateY(-40%);
+	}	
+	50%{
+		transform: translateY(40%);
+	}
+	100% {
+		transform: translateY(0%);
+	}		
+}
+
+.zoomIn {
+	animation-name: zoomIn;
+	-webkit-animation-name: zoomIn;	
+	
+	animation-timing-function: ease; 
+	-webkit-animation-timing-function: ease;
+}
+
+@keyframes zoomIn {
+	0% {		
+		transform: scale(0.5);		
+	}
+	50% {		
+		transform: scale(1.5);		
+	}
+	100% {		
+		transform: scale(1);		
+	}
+}
+
+.rotate {
+	animation-name: rotate;
+	-webkit-animation-name: rotate;	
+		
+  animation-timing-function: ease;
+	-webkit-animation-timing-function: ease;	
+}
+
+@keyframes rotate {
+	25% {
+		transform: rotate(90deg);		
+	}
+	50% {
+		transform: rotate(0deg);		
+	}
+	75% {
+		transform: rotate(45deg);		
+	}
+	100% {
+		transform: rotate(0deg);		
+	}
+}
