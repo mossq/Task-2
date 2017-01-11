@@ -1,8 +1,8 @@
 (function() {
 	var addButton = document.getElementById("add");
 	
-	addButton.onclick = function() {
-		var indexer = nextScoreDivNum + 1;
+	addButton.addEventListener("click", function(){
+		var indexer = main.nextScoreDivNum + 1;
 		
 		var div = document.createElement("div"),
 			h1 = document.createElement("h1"),
@@ -30,48 +30,48 @@
 			btnDelete = document.createElement("button"),	
 			txtDelete = document.createTextNode("DELETE");
 		
-			input.setAttribute('type',"number");
-			input.setAttribute('class',"value");						
-			div.setAttribute('id',"score-" + indexer);
-			div.setAttribute('class',"score");
-			span.setAttribute('class', "counter");
-			btnUp.setAttribute('class', "up");
-			btnDown.setAttribute('class', "down");
-			btnGet.setAttribute('class', "get");
-			btnSet.setAttribute('class', "set");
-			btnReset.setAttribute('class', "reset");
-			btnDelete.setAttribute('class', "delete");
-				
-			div.appendChild(h1);
-			h1.appendChild(txtH1);
-			h1.appendChild(span);
-			div.appendChild(form);
-			form.appendChild(btnUp);
-			btnUp.appendChild(txtUp);
-			form.appendChild(btnDown);
-			btnDown.appendChild(txtDown);
-			form.appendChild(btnGet);
-			btnGet.appendChild(txtGet);
-			form.appendChild(input);
-			form.appendChild(btnSet);
-			btnSet.appendChild(txtSet);
-			form.appendChild(btnReset);
-			btnReset.appendChild(txtReset);
-			div.appendChild(btnDelete);
-			btnDelete.appendChild(txtDelete);
-					
-			var userValues = getValues();
-			if (userValues === undefined)
-				return;
-			input.setAttribute('placeholder', "0 - " + (Math.pow(10, userValues.numOfD) - 1));
-			document.body.appendChild(div);
+		input.setAttribute('type', "number");
+		input.setAttribute('class', "value");						
+		div.setAttribute('id', "score-" + indexer);
+		div.setAttribute('class', "score");
+		span.setAttribute('class', "counter");
+		btnUp.setAttribute('class', "up");
+		btnDown.setAttribute('class', "down");
+		btnGet.setAttribute('class', "get");
+		btnSet.setAttribute('class', "set");
+		btnReset.setAttribute('class', "reset");
+		btnDelete.setAttribute('class', "delete");
 			
-			var scoreUI = new ScoreUI(div, userValues.numOfD, userValues.initVal, userValues.animationName, userValues.animationDuration + "s");
-			scoreUI.generateEvents();
-			
-			scoreUIArr.push(scoreUI);
-			nextScoreDivNum++;			
-	}
+		div.appendChild(h1);
+		h1.appendChild(txtH1);
+		h1.appendChild(span);
+		div.appendChild(form);
+		form.appendChild(btnUp);
+		btnUp.appendChild(txtUp);
+		form.appendChild(btnDown);
+		btnDown.appendChild(txtDown);
+		form.appendChild(btnGet);
+		btnGet.appendChild(txtGet);
+		form.appendChild(input);
+		form.appendChild(btnSet);
+		btnSet.appendChild(txtSet);
+		form.appendChild(btnReset);
+		btnReset.appendChild(txtReset);
+		div.appendChild(btnDelete);
+		btnDelete.appendChild(txtDelete);
+		
+		var userValues = getValues();
+		if (userValues === undefined)
+			return;
+		input.setAttribute('placeholder', "0 - " + (Math.pow(10, userValues.numOfD) - 1));
+		document.body.appendChild(div);
+		
+		var scoreUI = new ScoreUI(div, userValues.numOfD, userValues.initVal, userValues.animationName, userValues.animationDuration + "s");
+		scoreUI.generateEvents(main);
+		
+		main.scoreUIArr.push(scoreUI);
+		main.nextScoreDivNum++;
+	});
 	
 	function getValues() {	
 		do {
@@ -112,6 +112,5 @@
 		} while( (isNaN(durationOfAnimation)) || durationOfAnimation<0 );
 		
 		return {numOfD: numOfD, initVal: initVal, animationName: nameOfAnimation, animationDuration: durationOfAnimation};
-	}
-		
+	}		
 })();

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
-    <head>
+	<head>
         <title>Score counter</title>
         <link href="main.css" rel="stylesheet">
     </head>
     <body>
-				<button class="add" id="add">ADD COUNTER</button>
-        <div class="score-1" id="score-1">
-						
+		<button class="add" id="add">ADD COUNTER</button>
+        <div class="score-1" id="score-1">						
             <h1>Score 1: <span class="counter"></span></h1>
             <form>
                 <button class="up">Up</button>
@@ -17,11 +16,9 @@
                 <button class="set">Set</button>
                 <button class="reset">Reset</button>
             </form>
-						<button class="delete">DELETE</button>
-				</div>
-				
-        <div class="score-2" id="score-2">
-						
+			<button class="delete">DELETE</button>
+		</div>				
+        <div class="score-2" id="score-2">						
             <h1>Score 2: <span class="counter"></span></h1>
             <form>
                 <button class="up">Up</button>
@@ -31,10 +28,9 @@
                 <button class="set">Set</button>
                 <button class="reset">Reset</button>
             </form>
-						<button class="delete">DELETE</button>
+			<button class="delete">DELETE</button>
         </div>
-        <div class="score-3" id="score-3">
-						
+        <div class="score-3" id="score-3">						
             <h1>Score 3: <span class="counter"></span></h1>
             <form>
                 <button class="up">Up</button>
@@ -44,21 +40,11 @@
                 <button class="set">Set</button>
                 <button class="reset">Reset</button>
             </form>
-						<button class="delete">DELETE</button>
+			<button class="delete">DELETE</button>
         </div>
         <script src="score-counter.js"></script>
         <script src="score-ui.js"></script>				
-        <script>						
-            var score1 = new ScoreUI(document.getElementById("score-1"), 1, 0, 'slideDown', "1s");						
-            var score2 = new ScoreUI(document.getElementById("score-2"), 2, 10, 'zoomIn', "0.1s");
-            var score3 = new ScoreUI(document.getElementById("score-3"), 4, 100, 'rotate', "0.5s");
-            var scoreUIArr = [score1, score2, score3];
-						var nextScoreDivNum = scoreUIArr.length;
-						
-						score1.generateEvents();
-						score2.generateEvents();
-						score3.generateEvents();						
-        </script>
-				<script src="add-counter.js"></script>			
+        <script src="main.js"></script>		
+		<script src="add-counter.js"></script>	
     </body>
 </html>

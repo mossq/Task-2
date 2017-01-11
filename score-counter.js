@@ -9,9 +9,16 @@ class ScoreCounter {
 		this.changeValue();			
 	}
 	
-	changeValue(playAnim) {
+	repeat(str, count) {
+		var array = [];
+		for (var i = 0; i < count; i++)
+			array[i] = str;
+		return array.join('');		
+	}
+	
+	changeValue(playAnim) {		
 		var str = "" + this.val,
-			pad = "0".repeat(this.numOfDigits),
+			pad = this.repeat("0", this.numOfDigits),
 			ans = (pad + str).substring(str.length);
 		
 		if (playAnim) {
@@ -28,7 +35,7 @@ class ScoreCounter {
 	}
 	
 	up() {
-		if (this.val == (Math.pow(10, this.numOfDigits) - 1) ) {
+		if (this.val === (Math.pow(10, this.numOfDigits) - 1) ) {
 			return;
 		}
 		
@@ -37,7 +44,7 @@ class ScoreCounter {
 	}
 	
 	down() {
-		if (this.val == 0) {
+		if (this.val === 0) {
 			return;
 		}
 		
@@ -59,7 +66,7 @@ class ScoreCounter {
 	}
 	
 	setValue(valToSet){
-		if ((valToSet > Math.pow(10, this.numOfDigits) - 1) || (valToSet < 0)) {
+		if ((valToSet > Math.pow(10, this.numOfDigits) - 1) || (valToSet < 0) || (valToSet.match(/^\d+$/) === null) ) {
 			return;
 		}
 		
