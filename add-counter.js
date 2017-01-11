@@ -61,8 +61,9 @@
 		btnDelete.appendChild(txtDelete);
 		
 		var userValues = getValues();
-		if (userValues === undefined)
+		if (userValues === undefined) {
 			return;
+		}	
 		input.setAttribute('placeholder', "0 - " + (Math.pow(10, userValues.numOfD) - 1));
 		document.body.appendChild(div);
 		
