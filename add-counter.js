@@ -64,6 +64,9 @@
 		if (userValues === undefined)
 			return;
 		input.setAttribute('placeholder', "0 - " + (Math.pow(10, userValues.numOfD) - 1));
+		input.setAttribute('min', "0");
+		input.setAttribute('max', (Math.pow(10, userValues.numOfD) - 1));
+		
 		document.body.appendChild(div);
 		
 		var scoreUI = new ScoreUI(div, userValues.numOfD, userValues.initVal, userValues.animationName, userValues.animationDuration + "s");
